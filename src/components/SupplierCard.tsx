@@ -12,6 +12,7 @@ import {
   Trash2,
   Copy,
   ImageOff,
+  Camera,
 } from 'lucide-react';
 import { Supplier, getCategoryBadgeStyle } from '../types/supplier';
 
@@ -23,6 +24,7 @@ interface SupplierCardProps {
   onEdit?: (supplier: Supplier) => void;
   onDelete?: (id: string) => void;
   onCopyInfo?: (supplier: Supplier) => void;
+  onReplaceCard?: (supplier: Supplier, side?: 'front' | 'back') => void;
 }
 
 export const SupplierCard: React.FC<SupplierCardProps> = ({
@@ -33,6 +35,7 @@ export const SupplierCard: React.FC<SupplierCardProps> = ({
   onEdit,
   onDelete,
   onCopyInfo,
+  onReplaceCard,
 }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [imgError, setImgError] = useState(false);
@@ -109,6 +112,21 @@ export const SupplierCard: React.FC<SupplierCardProps> = ({
             }`}
           />
         </button>
+
+        {/* Change Image Camera Button Over Image */}
+        {onReplaceCard && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onReplaceCard(supplier, 'front');
+            }}
+            className="absolute top-2 right-10 sm:top-2.5 sm:right-10 w-7 h-7 rounded-full bg-white/95 backdrop-blur-xs border border-slate-200/80 shadow-xs flex items-center justify-center transition-all hover:scale-110 active:scale-95 text-slate-500 hover:text-blue-600 z-10 opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
+            title="Replace Front Card Image"
+            aria-label="Replace Front Card Image"
+          >
+            <Camera className="w-3.5 h-3.5" />
+          </button>
+        )}
       </div>
 
       {/* Card Content */}
@@ -138,134 +156,177 @@ export const SupplierCard: React.FC<SupplierCardProps> = ({
             </span>
           </div>
 
-          {/* Metadata Details */}
-          <div className="space-y-1 sm:space-y-1.5 pt-0.5 sm:pt-1 text-[11.5px] sm:text-xs text-slate-600">
+        {/* Metadata Details */}
+          <div className="space-y-1.5 pt-1 text-xs text-slate-600">
             {/* Location */}
-            <div className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              <span className="truncate text-slate-500" title={`${supplier.city}, ${supplier.province}`}>
-                {supplier.city}, {supplier.province}
-              </span>
-            </div>
+            {(supplier.city || supplier.province) && (
+              <div className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <span className="truncate text-slate-500" title={`${supplier.city}, ${supplier.province}`}>
+                  {supplier.city}{supplier.city && supplier.province ? ', ' : ''}{supplier.province}
+                </span>
+              </div>
+            )}
 
             {/* Contact Person */}
-            <div className="flex items-center gap-2">
-              <User className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              <span className="truncate font-medium text-slate-700" title={supplier.contactPerson}>
-                {supplier.contactPerson}
-              </span>
-            </div>
+            {supplier.contactPerson && (
+              <div className="flex items-center gap-2">
+                <User className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <span className="truncate font-medium text-slate-700" title={supplier.contactPerson}>
+                  {supplier.contactPerson}
+                  {supplier.position && (
+                    <span className="text-slate-400 font-normal ml-1">({supplier.position})</span>
+                  )}
+                </span>
+              </div>
+            )}
 
             {/* Phone */}
-            <div className="flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              <a
-                href={`tel:${supplier.phone}`}
-                onClick={(e) => e.stopPropagation()}
-                title={`Call ${supplier.phone}`}
-                className="text-slate-700 hover:text-blue-600 hover:underline truncate"
-              >
-                {supplier.phone}
-              </a>
-            </div>
+            {supplier.phone && supplier.phone.trim().length > 3 && (
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <a
+                  href={`tel:${supplier.phone.replace(/[^0-9+]/g, '')}`}
+                  onClick={(e) => e.stopPropagation()}
+                  title={`Call ${supplier.phone}`}
+                  className="text-slate-700 hover:text-blue-600 hover:underline truncate"
+                >
+                  {supplier.phone}
+                </a>
+              </div>
+            )}
 
-            {/* Email */}
-            <div className="flex items-center gap-2">
-              <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              <a
-                href={`mailto:${supplier.email}`}
-                onClick={(e) => e.stopPropagation()}
-                title={supplier.email}
-                className="truncate text-slate-600 hover:text-blue-600 hover:underline"
-              >
-                {supplier.email}
-              </a>
-            </div>
+            {/* Email (Only render when valid) */}
+            {supplier.email && supplier.email.includes('@') && (
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <a
+                  href={`mailto:${supplier.email}`}
+                  onClick={(e) => e.stopPropagation()}
+                  title={supplier.email}
+                  className="truncate text-slate-600 hover:text-blue-600 hover:underline"
+                >
+                  {supplier.email}
+                </a>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Website & Overflow Menu */}
-        <div className="flex items-center justify-between pt-1.5 sm:pt-2 border-t border-slate-100 text-[11.5px] sm:text-xs">
+        {/* Website & Bottom Actions */}
+        <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
           <div className="flex items-center gap-2 truncate flex-1 mr-2">
-            <Globe className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-            <a
-              href={supplier.website.startsWith('http') ? supplier.website : `https://${supplier.website}`}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              title={supplier.website}
-              className="truncate text-blue-600 hover:underline font-medium"
-            >
-              {supplier.website.replace(/^https?:\/\//, '')}
-            </a>
+            {supplier.website && supplier.website.trim().length > 3 ? (
+              <>
+                <Globe className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <a
+                  href={supplier.website.startsWith('http') ? supplier.website : `https://${supplier.website}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  title={supplier.website}
+                  className="truncate text-blue-600 hover:underline font-medium"
+                >
+                  {supplier.website.replace(/^https?:\/\//, '')}
+                </a>
+              </>
+            ) : (
+              <span className="text-[11px] text-slate-400 italic">Direct Sourcing Contact</span>
+            )}
           </div>
 
-          {/* Overflow Action Menu */}
-          <div className="relative shrink-0" ref={menuRef}>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowMenu(!showMenu);
-              }}
-              className="p-1 rounded-md text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
-              title="More actions"
-            >
-              <MoreVertical className="w-4 h-4" />
-            </button>
-
-            {showMenu && (
-              <div
+          {/* Quick Actions & Overflow Menu */}
+          <div className="flex items-center gap-1 shrink-0">
+            {supplier.phone && (
+              <a
+                href={`tel:${supplier.phone.replace(/[^0-9+]/g, '')}`}
                 onClick={(e) => e.stopPropagation()}
-                className="absolute right-0 bottom-full mb-1 w-44 bg-white rounded-lg shadow-lg border border-slate-200 py-1 z-20 text-xs text-slate-700"
+                className="sm:hidden p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 rounded-md transition-colors min-w-[32px] min-h-[32px] flex items-center justify-center"
+                title="Call Supplier"
               >
-                <button
-                  onClick={() => {
-                    setShowMenu(false);
-                    onSelect(supplier);
-                  }}
-                  className="w-full px-3 py-1.5 text-left flex items-center gap-2 hover:bg-slate-50"
-                >
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-                  <span>View Details</span>
-                </button>
-                {onCopyInfo && (
-                  <button
-                    onClick={() => {
-                      setShowMenu(false);
-                      onCopyInfo(supplier);
-                    }}
-                    className="w-full px-3 py-1.5 text-left flex items-center gap-2 hover:bg-slate-50"
-                  >
-                    <Copy className="w-3.5 h-3.5 text-slate-400" />
-                    <span>Copy Contact Info</span>
-                  </button>
-                )}
-                {onEdit && (
-                  <button
-                    onClick={() => {
-                      setShowMenu(false);
-                      onEdit(supplier);
-                    }}
-                    className="w-full px-3 py-1.5 text-left flex items-center gap-2 hover:bg-slate-50"
-                  >
-                    <Edit2 className="w-3.5 h-3.5 text-slate-400" />
-                    <span>Edit Supplier</span>
-                  </button>
-                )}
-                {onDelete && (
-                  <button
-                    onClick={() => {
-                      setShowMenu(false);
-                      onDelete(supplier.id);
-                    }}
-                    className="w-full px-3 py-1.5 text-left flex items-center gap-2 text-rose-600 hover:bg-rose-50"
-                  >
-                    <Trash2 className="w-3.5 h-3.5 text-rose-500" />
-                    <span>Delete</span>
-                  </button>
-                )}
-              </div>
+                <Phone className="w-3.5 h-3.5 text-emerald-600" />
+              </a>
             )}
+
+            {/* Overflow Action Menu */}
+            <div className="relative shrink-0" ref={menuRef}>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowMenu(!showMenu);
+                }}
+                className="p-1.5 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors min-w-[32px] min-h-[32px] flex items-center justify-center"
+                title="More actions"
+              >
+                <MoreVertical className="w-4 h-4" />
+              </button>
+
+              {showMenu && (
+                <div
+                  onClick={(e) => e.stopPropagation()}
+                  className="absolute right-0 bottom-full mb-1 w-44 bg-white rounded-lg shadow-lg border border-slate-200 py-1 z-20 text-xs text-slate-700"
+                >
+                  <button
+                    onClick={() => {
+                      setShowMenu(false);
+                      onSelect(supplier);
+                    }}
+                    className="w-full px-3 py-1.5 text-left flex items-center gap-2 hover:bg-slate-50"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                    <span>View Details</span>
+                  </button>
+                  {onCopyInfo && (
+                    <button
+                      onClick={() => {
+                        setShowMenu(false);
+                        onCopyInfo(supplier);
+                      }}
+                      className="w-full px-3 py-1.5 text-left flex items-center gap-2 hover:bg-slate-50"
+                    >
+                      <Copy className="w-3.5 h-3.5 text-slate-400" />
+                      <span>Copy Contact Info</span>
+                    </button>
+                  )}
+                  {onReplaceCard && (
+                    <button
+                      onClick={() => {
+                        setShowMenu(false);
+                        onReplaceCard(supplier, 'front');
+                      }}
+                      className="w-full px-3 py-1.5 text-left flex items-center gap-2 hover:bg-blue-50 text-blue-600 font-medium"
+                    >
+                      <Camera className="w-3.5 h-3.5 text-blue-500" />
+                      <span>Change Card Image</span>
+                    </button>
+                  )}
+                  {onEdit && (
+                    <button
+                      onClick={() => {
+                        setShowMenu(false);
+                        onEdit(supplier);
+                      }}
+                      className="w-full px-3 py-1.5 text-left flex items-center gap-2 hover:bg-slate-50"
+                    >
+                      <Edit2 className="w-3.5 h-3.5 text-slate-400" />
+                      <span>Edit Supplier</span>
+                    </button>
+                  )}
+                  {onDelete && (
+                    <button
+                      onClick={() => {
+                        setShowMenu(false);
+                        onDelete(supplier.id);
+                      }}
+                      className="w-full px-3 py-1.5 text-left flex items-center gap-2 text-rose-600 hover:bg-rose-50"
+                    >
+                      <Trash2 className="w-3.5 h-3.5 text-rose-500" />
+                      <span>Delete</span>
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -9,10 +9,11 @@ import { CardViewerModal } from './components/CardViewerModal';
 import { AddSupplierModal } from './components/AddSupplierModal';
 import { EditSupplierModal } from './components/EditSupplierModal';
 import { DuplicateReviewModal } from './components/DuplicateReviewModal';
+import { ReplaceCardModal } from './components/ReplaceCardModal';
 import { FilterPopover } from './components/FilterPopover';
 import { SortMenu, SortMode } from './components/SortMenu';
 import { Toast, ToastMessage } from './components/Toast';
-import { Plus, Star, CopyCheck } from 'lucide-react';
+import { Plus, Star, CopyCheck, FolderTree, SlidersHorizontal, ArrowUpDown } from 'lucide-react';
 import { Supplier, SupplierCategory, SupplierType, ViewMode, StatsSummary } from './types/supplier';
 import { supplierRepository } from './services/supplierRepository';
 
@@ -21,7 +22,7 @@ export const App: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<SupplierCategory | 'Favorites' | 'Duplicate Review'>('All Suppliers');
   const [loading, setLoading] = useState<boolean>(true);
   const [selectedSupplierId, setSelectedSupplierId] = useState<string | null>(
-    typeof window !== 'undefined' && window.innerWidth >= 1024 ? 'sup-001' : null
+    typeof window !== 'undefined' && window.innerWidth >= 1280 ? 'sup-001' : null
   );
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
@@ -48,6 +49,15 @@ export const App: React.FC = () => {
     isOpen: false,
     initialSide: 'front',
   });
+  const [replaceCardModal, setReplaceCardModal] = useState<{
+    isOpen: boolean;
+    supplier: Supplier | null;
+    initialSide: 'front' | 'back';
+  }>({
+    isOpen: false,
+    supplier: null,
+    initialSide: 'front',
+  });
 
   // Toasts
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
@@ -65,7 +75,7 @@ export const App: React.FC = () => {
     try {
       const data = await supplierRepository.getAll();
       setSuppliers(data);
-      if (!selectedSupplierId && data.length > 0 && typeof window !== 'undefined' && window.innerWidth >= 1024) {
+      if (!selectedSupplierId && data.length > 0 && typeof window !== 'undefined' && window.innerWidth >= 1280) {
         setSelectedSupplierId(data[0].id);
       }
     } catch (err) {
@@ -247,7 +257,7 @@ export const App: React.FC = () => {
     const isCurrentInView = displayedSuppliers.some((s) => s.id === selectedSupplierId);
 
     if (!isCurrentInView) {
-      if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+      if (typeof window !== 'undefined' && window.innerWidth >= 1280) {
         // Desktop: auto-select first item
         setSelectedSupplierId(displayedSuppliers[0].id);
       } else {
@@ -330,6 +340,29 @@ export const App: React.FC = () => {
     }
   };
 
+  const handleOpenReplaceCard = (supplier: Supplier, side: 'front' | 'back' = 'front') => {
+    setReplaceCardModal({
+      isOpen: true,
+      supplier,
+      initialSide: side,
+    });
+  };
+
+  const handleSaveCardReplacement = async (
+    supplierId: string,
+    side: 'front' | 'back',
+    file: File
+  ): Promise<Supplier> => {
+    const updated = await supplierRepository.replaceCardImage(supplierId, side, file);
+    setSuppliers((prev) => prev.map((s) => (s.id === updated.id ? updated : s)));
+    return updated;
+  };
+
+  const handleCardReplacementSuccess = (updatedSupplier: Supplier) => {
+    setSuppliers((prev) => prev.map((s) => (s.id === updatedSupplier.id ? updatedSupplier : s)));
+    addToast(`Business card replaced for "${updatedSupplier.companyName}"`, 'success');
+  };
+
   const handleCopyInfo = (supplier: Supplier) => {
     const text = `${supplier.companyName}
 Contact: ${supplier.contactPerson} (${supplier.position || 'Sales'})
@@ -409,9 +442,9 @@ Products: ${supplier.productRange.join(', ')}`;
         />
 
         {/* 3. Center Dashboard Directory Area */}
-        <main className="flex-1 min-w-0 px-3 sm:px-5 lg:px-8 py-2.5 sm:py-5 overflow-y-auto">
+        <main className="flex-1 min-w-0 px-3 sm:px-5 lg:px-8 py-2.5 sm:py-5 pb-24 md:pb-8 overflow-y-auto">
           {/* Mobile Category Horizontal Scrolling Chips */}
-          <div className="lg:hidden flex items-center gap-1.5 overflow-x-auto pb-2 mb-2 scrollbar-none select-none">
+          <div className="lg:hidden flex items-center gap-1.5 overflow-x-auto pb-2 mb-2.5 scrollbar-none select-none -mx-3 px-3">
             {(
               [
                 'All Suppliers',
@@ -434,15 +467,15 @@ Products: ${supplier.productRange.join(', ')}`;
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap shrink-0 transition-colors flex items-center gap-1 border ${
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap shrink-0 transition-all flex items-center gap-1.5 border active:scale-95 min-h-[34px] ${
                     isSelected
-                      ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
+                      ? 'bg-blue-600 text-white border-blue-600 shadow-2xs font-semibold'
                       : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
                   }`}
                 >
                   <span>{cat}</span>
                   <span
-                    className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
                       isSelected
                         ? 'bg-blue-700 text-white'
                         : 'bg-slate-100 text-slate-500'
@@ -457,16 +490,16 @@ Products: ${supplier.productRange.join(', ')}`;
             {/* Favorites Chip on Mobile */}
             <button
               onClick={() => setSelectedCategory('Favorites')}
-              className={`px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap shrink-0 transition-colors flex items-center gap-1 border ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap shrink-0 transition-all flex items-center gap-1.5 border active:scale-95 min-h-[34px] ${
                 selectedCategory === 'Favorites'
-                  ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
+                  ? 'bg-blue-600 text-white border-blue-600 shadow-2xs font-semibold'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
               }`}
             >
-              <Star className="w-3 h-3 fill-amber-400 text-amber-500" />
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
               <span>Favorites</span>
               <span
-                className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
                   selectedCategory === 'Favorites'
                     ? 'bg-blue-700 text-white'
                     : 'bg-slate-100 text-slate-500'
@@ -479,16 +512,16 @@ Products: ${supplier.productRange.join(', ')}`;
             {/* Duplicate Review Chip on Mobile */}
             <button
               onClick={() => handleCategorySelect('Duplicate Review')}
-              className={`px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap shrink-0 transition-colors flex items-center gap-1 border ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap shrink-0 transition-all flex items-center gap-1.5 border active:scale-95 min-h-[34px] ${
                 selectedCategory === 'Duplicate Review'
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                  ? 'bg-amber-600 text-white border-amber-600 shadow-2xs font-semibold'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
               }`}
             >
-              <CopyCheck className="w-3 h-3 text-amber-600" />
+              <CopyCheck className="w-3.5 h-3.5 text-amber-600" />
               <span>Duplicates</span>
               <span
-                className={`text-[10px] px-1.5 py-0.2 rounded-full font-medium ${
+                className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
                   selectedCategory === 'Duplicate Review'
                     ? 'bg-amber-700 text-white'
                     : 'bg-amber-100 text-amber-700'
@@ -499,7 +532,7 @@ Products: ${supplier.productRange.join(', ')}`;
             </button>
           </div>
 
-          {/* Top 5 KPI Stat Cards (Horizontal ribbon on mobile, grid on desktop) */}
+          {/* Top 5 KPI Stat Cards */}
           <StatCards
             stats={stats}
             activeFilter={quickStatFilter}
@@ -509,27 +542,29 @@ Products: ${supplier.productRange.join(', ')}`;
           />
 
           {/* Directory Content Header */}
-          <div className="flex items-center justify-between mb-2.5 sm:mb-4 flex-wrap gap-1.5 sm:gap-2">
+          <div className="flex items-center justify-between mb-3 sm:mb-4 flex-wrap gap-2">
             <div>
-              <h2 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-                <span>{selectedCategory}</span>
-                <span className="text-[11px] sm:text-xs font-normal px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
-                  {displayedSuppliers.length} {displayedSuppliers.length === 1 ? 'Supplier' : 'Suppliers'}
-                </span>
+              <div className="flex items-center gap-2 flex-wrap">
+                <h2 className="text-base sm:text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                  <span>{selectedCategory}</span>
+                  <span className="text-[11px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                    {displayedSuppliers.length} {displayedSuppliers.length === 1 ? 'Supplier' : 'Suppliers'}
+                  </span>
+                </h2>
                 {searchQuery && (
-                  <span className="text-xs sm:text-sm font-normal text-slate-500 truncate max-w-[180px] sm:max-w-none">
+                  <span className="text-xs font-normal text-slate-500 truncate max-w-[150px] sm:max-w-none">
                     matching "{searchQuery}"
                   </span>
                 )}
-              </h2>
+              </div>
               <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">
-                Browse and manage your China supplier contacts
+                Browse and manage verified China supplier contacts
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10.5px] sm:text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Production Dataset • {suppliers.filter((s) => !s.isDuplicate).length} Verified Records
+                <span>{suppliers.filter((s) => !s.isDuplicate).length} Verified Records</span>
               </span>
             </div>
           </div>
@@ -579,6 +614,7 @@ Products: ${supplier.productRange.join(', ')}`;
                   onEdit={(sup) => setEditingSupplier(sup)}
                   onDelete={handleDeleteSupplier}
                   onCopyInfo={handleCopyInfo}
+                  onReplaceCard={handleOpenReplaceCard}
                 />
               ))}
 
@@ -610,15 +646,16 @@ Products: ${supplier.productRange.join(', ')}`;
                   isSelected={selectedSupplier?.id === supplier.id}
                   onSelect={(sup: Supplier) => setSelectedSupplierId(sup.id)}
                   onToggleFavorite={handleToggleFavorite}
+                  onReplaceCard={handleOpenReplaceCard}
                 />
               ))}
             </div>
           )}
         </main>
 
-        {/* 4. Right-side Supplier Details Drawer (Docked on desktop >=1024px) */}
+        {/* 4. Right-side Supplier Details Drawer (Docked on desktop >=1280px) */}
         {selectedSupplier && (
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <SupplierDrawer
               supplier={selectedSupplier}
               onClose={() => setSelectedSupplierId(null)}
@@ -626,19 +663,20 @@ Products: ${supplier.productRange.join(', ')}`;
               onOpenCardViewer={(side) => setViewerModal({ isOpen: true, initialSide: side })}
               onEditSupplier={(sup) => setEditingSupplier(sup)}
               onCopyInfo={handleCopyInfo}
+              onReplaceCard={handleOpenReplaceCard}
             />
           </div>
         )}
       </div>
 
-      {/* Mobile & Tablet Slide-in Drawer (<1024px, zero top gap, full-height slide-over) */}
+      {/* Mobile & Tablet Slide-in Drawer (<1280px, zero top gap, full-height slide-over) */}
       {selectedSupplier && (
-        <div className="lg:hidden fixed inset-0 z-50 flex justify-end animate-in fade-in duration-150">
+        <div className="xl:hidden fixed inset-0 z-50 flex justify-end animate-in fade-in duration-150">
           <div
-            className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity"
+            className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs transition-opacity"
             onClick={() => setSelectedSupplierId(null)}
           />
-          <div className="relative w-full sm:w-[420px] max-w-full h-full bg-white shadow-2xl flex flex-col z-10 animate-in slide-in-from-right duration-200">
+          <div className="relative w-full sm:w-[440px] max-w-full h-full bg-white shadow-2xl flex flex-col z-10 animate-in slide-in-from-right duration-200">
             <SupplierDrawer
               supplier={selectedSupplier}
               onClose={() => setSelectedSupplierId(null)}
@@ -646,6 +684,7 @@ Products: ${supplier.productRange.join(', ')}`;
               onOpenCardViewer={(side) => setViewerModal({ isOpen: true, initialSide: side })}
               onEditSupplier={(sup) => setEditingSupplier(sup)}
               onCopyInfo={handleCopyInfo}
+              onReplaceCard={handleOpenReplaceCard}
             />
           </div>
         </div>
@@ -657,6 +696,7 @@ Products: ${supplier.productRange.join(', ')}`;
         initialSide={viewerModal.initialSide}
         isOpen={viewerModal.isOpen}
         onClose={() => setViewerModal((v) => ({ ...v, isOpen: false }))}
+        onReplaceCard={handleOpenReplaceCard}
       />
 
       {/* 6. Add Supplier Modal */}
@@ -691,6 +731,16 @@ Products: ${supplier.productRange.join(', ')}`;
         onDismiss={handleDismissDuplicate}
       />
 
+      {/* 8b. Mobile-First Business Card Replacement Modal */}
+      <ReplaceCardModal
+        supplier={replaceCardModal.supplier}
+        initialSide={replaceCardModal.initialSide}
+        isOpen={replaceCardModal.isOpen}
+        onClose={() => setReplaceCardModal((prev) => ({ ...prev, isOpen: false }))}
+        onSuccess={handleCardReplacementSuccess}
+        onSave={handleSaveCardReplacement}
+      />
+
       {/* 9. Advanced Filters Popover */}
       <FilterPopover
         isOpen={isFilterOpen}
@@ -715,6 +765,66 @@ Products: ${supplier.productRange.join(', ')}`;
         currentSort={currentSort}
         onSelectSort={setCurrentSort}
       />
+
+      {/* 11. Mobile Thumb-Friendly Action Dock (<md mobile screens) */}
+      <nav
+        aria-label="Mobile Navigation"
+        className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200/90 py-1.5 px-3 shadow-lg z-30 flex items-center justify-around pb-safe select-none"
+      >
+        <button
+          onClick={() => setIsMobileSidebarOpen(true)}
+          className="flex flex-col items-center justify-center p-1 text-slate-600 hover:text-blue-600 active:scale-95 transition-all min-w-[54px]"
+        >
+          <FolderTree className="w-5 h-5 mb-0.5 text-slate-500" />
+          <span className="text-[10px] font-medium leading-tight">Categories</span>
+        </button>
+
+        <button
+          onClick={() => handleCategorySelect(selectedCategory === 'Favorites' ? 'All Suppliers' : 'Favorites')}
+          className={`flex flex-col items-center justify-center p-1 active:scale-95 transition-all min-w-[54px] relative ${
+            selectedCategory === 'Favorites' ? 'text-blue-600 font-semibold' : 'text-slate-600 hover:text-blue-600'
+          }`}
+        >
+          <Star className={`w-5 h-5 mb-0.5 ${selectedCategory === 'Favorites' ? 'fill-amber-400 text-amber-500' : 'text-slate-500'}`} />
+          <span className="text-[10px] leading-tight">Favorites</span>
+          {favoritesCount > 0 && (
+            <span className="absolute top-0 right-2 w-4 h-4 rounded-full bg-blue-600 text-white text-[9px] font-bold flex items-center justify-center">
+              {favoritesCount}
+            </span>
+          )}
+        </button>
+
+        {/* Center Primary Action: Add Supplier */}
+        <button
+          onClick={() => setIsAddOpen(true)}
+          className="flex items-center justify-center -mt-4 w-12 h-12 rounded-full bg-slate-900 text-white shadow-lg shadow-slate-900/30 hover:bg-slate-800 active:scale-90 transition-all border-2 border-white"
+          title="Add New Supplier"
+          aria-label="Add New Supplier"
+        >
+          <Plus className="w-6 h-6" />
+        </button>
+
+        <button
+          onClick={() => setIsFilterOpen(true)}
+          className={`flex flex-col items-center justify-center p-1 active:scale-95 transition-all min-w-[54px] relative ${
+            hasActiveFilters ? 'text-blue-600 font-semibold' : 'text-slate-600 hover:text-blue-600'
+          }`}
+        >
+          <SlidersHorizontal className="w-5 h-5 mb-0.5 text-slate-500" />
+          <span className="text-[10px] leading-tight">Filter</span>
+          {hasActiveFilters && (
+            <span className="absolute top-0.5 right-3 w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+          )}
+        </button>
+
+        <button
+          onClick={() => setIsSortOpen(true)}
+          className="flex flex-col items-center justify-center p-1 text-slate-600 hover:text-blue-600 active:scale-95 transition-all min-w-[54px]"
+        >
+          <ArrowUpDown className="w-5 h-5 mb-0.5 text-slate-500" />
+          <span className="text-[10px] font-medium leading-tight">Sort</span>
+        </button>
+      </nav>
 
       {/* Toast Notification Layer */}
       <Toast toasts={toasts} onDismiss={(id) => setToasts((prev) => prev.filter((t) => t.id !== id))} />

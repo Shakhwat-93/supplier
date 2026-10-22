@@ -106,22 +106,34 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4 overflow-y-auto animate-in fade-in duration-150">
-      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-8">
-        <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-white">
-          <h3 className="font-bold text-base text-slate-900">
-            Edit Supplier: {supplier.companyName}
-          </h3>
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-slate-950/70 backdrop-blur-xs p-0 sm:p-4 overflow-y-auto animate-in fade-in duration-150">
+      <div
+        className="fixed inset-0 bg-transparent"
+        onClick={onClose}
+      />
+      <div className="relative w-full sm:max-w-2xl bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh] sm:my-8 z-10 animate-in slide-in-from-bottom duration-200">
+        {/* Mobile Drag Indicator */}
+        <div className="sm:hidden w-full pt-2.5 pb-1 flex justify-center bg-white cursor-pointer select-none" onClick={onClose}>
+          <div className="w-12 h-1.5 rounded-full bg-slate-300" />
+        </div>
+
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200 flex items-center justify-between bg-white shrink-0">
+          <div className="min-w-0 flex-1 mr-2">
+            <h3 className="font-bold text-sm sm:text-base text-slate-900 truncate">
+              Edit Supplier: {supplier.companyName}
+            </h3>
+            <p className="text-[11px] sm:text-xs text-slate-500">Update contact and catalog information</p>
+          </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100"
+            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 min-w-[36px] min-h-[36px] flex items-center justify-center shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-4 max-h-[75vh] overflow-y-auto text-xs">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">Company Name</label>
               <input
@@ -129,7 +141,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
                 required
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
@@ -138,18 +150,18 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
                 type="text"
                 value={chineseName}
                 onChange={(e) => setChineseName(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">Category</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value as SupplierCategory)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white text-base sm:text-xs"
               >
                 {CATEGORIES.map((cat) => (
                   <option key={cat} value={cat}>
@@ -163,7 +175,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
               <select
                 value={supplierType}
                 onChange={(e) => setSupplierType(e.target.value as SupplierType)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white text-base sm:text-xs"
               >
                 <option value="Manufacturer">Manufacturer</option>
                 <option value="Supplier">Supplier</option>
@@ -173,7 +185,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">Contact Person</label>
               <input
@@ -181,7 +193,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
                 required
                 value={contactPerson}
                 onChange={(e) => setContactPerson(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
@@ -190,45 +202,48 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
                 type="text"
                 value={position}
                 onChange={(e) => setPosition(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">Phone</label>
               <input
-                type="text"
+                type="tel"
+                inputMode="tel"
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
               <label className="block font-semibold text-slate-700 mb-1">Email</label>
               <input
                 type="email"
+                inputMode="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
               <label className="block font-semibold text-slate-700 mb-1">Website</label>
               <input
-                type="text"
+                type="url"
+                inputMode="url"
                 required
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">City</label>
               <input
@@ -236,7 +251,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
                 required
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
@@ -246,7 +261,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
                 required
                 value={province}
                 onChange={(e) => setProvince(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
           </div>
@@ -257,7 +272,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+              className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
             />
           </div>
 
@@ -267,7 +282,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
               type="text"
               value={productTags}
               onChange={(e) => setProductTags(e.target.value)}
-              className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+              className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
             />
           </div>
 
@@ -277,14 +292,14 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
               rows={3}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+              className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
             />
           </div>
 
           <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
             <span className="font-semibold text-slate-800 block mb-2">Update Card Images</span>
             <div className="grid grid-cols-2 gap-3">
-              <label className="flex items-center justify-center gap-1.5 p-2 bg-white border border-dashed border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 text-[11px] text-slate-600">
+              <label className="flex items-center justify-center gap-1.5 p-2.5 bg-white border border-dashed border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 text-[11px] text-slate-600 min-h-[42px]">
                 <Upload className="w-3.5 h-3.5" />
                 <span>Replace Front Card</span>
                 <input
@@ -294,7 +309,7 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
                   onChange={(e) => handleFileUpload(e, 'front')}
                 />
               </label>
-              <label className="flex items-center justify-center gap-1.5 p-2 bg-white border border-dashed border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 text-[11px] text-slate-600">
+              <label className="flex items-center justify-center gap-1.5 p-2.5 bg-white border border-dashed border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 text-[11px] text-slate-600 min-h-[42px]">
                 <Upload className="w-3.5 h-3.5" />
                 <span>Replace Back Card</span>
                 <input
@@ -307,17 +322,17 @@ export const EditSupplierModal: React.FC<EditSupplierModalProps> = ({
             </div>
           </div>
 
-          <div className="pt-3 border-t border-slate-200 flex items-center justify-end gap-3">
+          <div className="pt-3 border-t border-slate-200 flex items-center justify-end gap-3 pb-safe bg-white sticky bottom-0">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-slate-600 hover:text-slate-800 text-xs font-semibold rounded-lg hover:bg-slate-100"
+              className="px-4 py-2.5 text-slate-600 hover:text-slate-800 text-xs font-semibold rounded-xl hover:bg-slate-100 transition-colors min-h-[40px]"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow-sm flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-97 text-white text-xs font-semibold rounded-xl shadow-xs flex items-center gap-1.5 transition-all min-h-[40px]"
             >
               <Save className="w-4 h-4" />
               <span>Update Supplier</span>

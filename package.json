@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --env-file=.env tests/test_card_replacement.cjs && node tests/test_client_validation.cjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1153.0",

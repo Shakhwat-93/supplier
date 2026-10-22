@@ -13,10 +13,13 @@ export interface User {
 export interface IAuthService {
   getCurrentUser(): Promise<User | null>;
   canEdit(): boolean;
+  isAdmin(): boolean;
+  getAuthHeaders(): Record<string, string>;
+  setTestUser(user: User | null): void;
 }
 
 class MockAuthService implements IAuthService {
-  private user: User = {
+  private user: User | null = {
     id: 'user-001',
     email: 'admin@chinasuppliers.io',
     name: 'Sourcing Director',
@@ -28,7 +31,27 @@ class MockAuthService implements IAuthService {
   }
 
   canEdit(): boolean {
-    return this.user.role === 'admin' || this.user.role === 'buyer';
+    return this.user?.role === 'admin' || this.user?.role === 'buyer';
+  }
+
+  isAdmin(): boolean {
+    return this.user?.role === 'admin';
+  }
+
+  getAuthHeaders(): Record<string, string> {
+    if (!this.user) {
+      return {};
+    }
+    return {
+      'Authorization': `Bearer token-${this.user.id}-${this.user.role}`,
+      'X-User-Id': this.user.id,
+      'X-User-Email': this.user.email,
+      'X-User-Role': this.user.role,
+    };
+  }
+
+  setTestUser(user: User | null): void {
+    this.user = user;
   }
 }
 

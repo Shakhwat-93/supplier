@@ -155,35 +155,44 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4 overflow-y-auto animate-in fade-in duration-150">
-      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-slate-950/75 backdrop-blur-xs p-0 sm:p-4 overflow-y-auto animate-in fade-in duration-150">
+      <div
+        className="fixed inset-0 bg-transparent"
+        onClick={onClose}
+      />
+      <div className="relative w-full sm:max-w-2xl bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh] sm:my-8 z-10 animate-in slide-in-from-bottom duration-200">
+        {/* Mobile Drag Indicator */}
+        <div className="sm:hidden w-full pt-2.5 pb-1 flex justify-center bg-white cursor-pointer select-none" onClick={onClose}>
+          <div className="w-12 h-1.5 rounded-full bg-slate-300" />
+        </div>
+
         {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-white">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200 flex items-center justify-between bg-white shrink-0">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0">
               +
             </div>
-            <div>
-              <h3 className="font-bold text-base text-slate-900">
+            <div className="min-w-0">
+              <h3 className="font-bold text-sm sm:text-base text-slate-900 leading-snug truncate">
                 Add New China Supplier
               </h3>
-              <p className="text-xs text-slate-500">
-                Create verified contact with auto-generated business card graphics
+              <p className="text-[11px] sm:text-xs text-slate-500 truncate">
+                Verified contact with auto-generated business card graphics
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100"
+            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 min-w-[36px] min-h-[36px] flex items-center justify-center shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Form Body */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4 max-h-[75vh] overflow-y-auto text-xs">
+        <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 text-xs">
           {/* Company Name & Chinese Name */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">
                 Company Name (English) *
@@ -194,7 +203,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
                 placeholder="e.g. Xinhaiya Bags Co., Ltd."
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
@@ -206,13 +215,13 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
                 value={chineseName}
                 onChange={(e) => setChineseName(e.target.value)}
                 placeholder="e.g. 新海雅皮具有限公司"
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
           </div>
 
           {/* Category & Supplier Type */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">
                 Category *
@@ -220,7 +229,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value as SupplierCategory)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white text-base sm:text-xs"
               >
                 {CATEGORIES.map((cat) => (
                   <option key={cat} value={cat}>
@@ -236,7 +245,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
               <select
                 value={supplierType}
                 onChange={(e) => setSupplierType(e.target.value as SupplierType)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white text-base sm:text-xs"
               >
                 <option value="Manufacturer">Manufacturer</option>
                 <option value="Supplier">Supplier</option>
@@ -247,7 +256,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
           </div>
 
           {/* Contact Person & Position */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">
                 Contact Person *
@@ -258,7 +267,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
                 value={contactPerson}
                 onChange={(e) => setContactPerson(e.target.value)}
                 placeholder="e.g. Lily Luo"
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
@@ -270,28 +279,29 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
                 value={position}
                 onChange={(e) => setPosition(e.target.value)}
                 placeholder="e.g. Sales Manager"
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
           </div>
 
           {/* Phone & WhatsApp */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">
                 Phone Number *
               </label>
               <input
-                type="text"
+                type="tel"
+                inputMode="tel"
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+86 136 8888 1234"
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
-            <div className="flex items-center pt-6">
-              <label className="flex items-center gap-2 cursor-pointer select-none">
+            <div className="flex items-center pt-2 sm:pt-6">
+              <label className="flex items-center gap-2.5 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={hasWhatsApp}
@@ -306,18 +316,19 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
           </div>
 
           {/* Email & Website */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">
                 Email Address *
               </label>
               <input
                 type="email"
+                inputMode="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="contact@company.com"
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
@@ -325,18 +336,19 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
                 Website *
               </label>
               <input
-                type="text"
+                type="url"
+                inputMode="url"
                 required
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
                 placeholder="www.company.com"
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
           </div>
 
           {/* Location */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block font-semibold text-slate-700 mb-1">
                 City *
@@ -347,7 +359,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="e.g. Guangzhou, Shenzhen, Yiwu"
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
               />
             </div>
             <div>
@@ -357,7 +369,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
               <select
                 value={province}
                 onChange={(e) => setProvince(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white"
+                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-white text-base sm:text-xs"
               >
                 {PROVINCES.map((prov) => (
                   <option key={prov} value={prov}>
@@ -378,7 +390,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="e.g. No. 168, Bag Industrial Zone, Huadu District, Guangzhou, China"
-              className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+              className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
             />
           </div>
 
@@ -392,7 +404,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
               value={productTags}
               onChange={(e) => setProductTags(e.target.value)}
               placeholder="Backpacks, Travel Bags, Handbags, Canvas Bags"
-              className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+              className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
             />
           </div>
 
@@ -406,7 +418,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Good quality, competitive price. Support OEM/ODM. MOQ: 500 pcs."
-              className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+              className="w-full px-3 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-base sm:text-xs"
             />
           </div>
 
@@ -433,7 +445,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
                 <label className="block text-[11px] font-medium text-slate-600 mb-1">
                   Upload Front Image (Optional)
                 </label>
-                <label className="flex items-center justify-center gap-1.5 p-2 bg-white border border-dashed border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 text-[11px] text-slate-600">
+                <label className="flex items-center justify-center gap-1.5 p-2.5 bg-white border border-dashed border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 text-[11px] text-slate-600 min-h-[42px]">
                   <Upload className="w-3.5 h-3.5" />
                   <span>{customFrontUrl ? 'Replace Front' : 'Upload Front'}</span>
                   <input
@@ -449,7 +461,7 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
                 <label className="block text-[11px] font-medium text-slate-600 mb-1">
                   Upload Back Image (Optional)
                 </label>
-                <label className="flex items-center justify-center gap-1.5 p-2 bg-white border border-dashed border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 text-[11px] text-slate-600">
+                <label className="flex items-center justify-center gap-1.5 p-2.5 bg-white border border-dashed border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 text-[11px] text-slate-600 min-h-[42px]">
                   <Upload className="w-3.5 h-3.5" />
                   <span>{customBackUrl ? 'Replace Back' : 'Upload Back'}</span>
                   <input
@@ -463,18 +475,18 @@ export const AddSupplierModal: React.FC<AddSupplierModalProps> = ({
             </div>
           </div>
 
-          {/* Footer Submit */}
-          <div className="pt-3 border-t border-slate-200 flex items-center justify-end gap-3">
+          {/* Sticky Mobile/Desktop Footer Submit */}
+          <div className="pt-3 border-t border-slate-200 flex items-center justify-end gap-3 pb-safe bg-white sticky bottom-0">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-slate-600 hover:text-slate-800 text-xs font-semibold rounded-lg hover:bg-slate-100 transition-colors"
+              className="px-4 py-2.5 text-slate-600 hover:text-slate-800 text-xs font-semibold rounded-xl hover:bg-slate-100 transition-colors min-h-[40px]"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-sm flex items-center gap-1.5 transition-all"
+              className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 active:scale-97 text-white text-xs font-semibold rounded-xl shadow-xs flex items-center gap-1.5 transition-all min-h-[40px]"
             >
               <Plus className="w-4 h-4" />
               <span>Save Supplier</span>

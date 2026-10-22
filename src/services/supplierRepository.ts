@@ -11,6 +11,7 @@ export interface ISupplierRepository {
   toggleFavorite(id: string): Promise<boolean>;
   mergeDuplicates(primaryId: string, duplicateId: string): Promise<Supplier>;
   dismissDuplicate(duplicateId: string): Promise<boolean>;
+  replaceCardImage(supplierId: string, side: 'front' | 'back', file: File): Promise<Supplier>;
 }
 
 const STORAGE_KEY = 'china_supplier_directory_v2';
@@ -116,6 +117,28 @@ export class LocalStorageSupplierRepository implements ISupplierRepository {
       return true;
     }
     return false;
+  }
+
+  async replaceCardImage(supplierId: string, side: 'front' | 'back', file: File): Promise<Supplier> {
+    const list = this.getStored();
+    const supplier = list.find((s) => s.id === supplierId);
+    if (!supplier) throw new Error(`Supplier ${supplierId} not found`);
+
+    const dataUrl = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+
+    const updatedCards = {
+      ...supplier.cards,
+      [side === 'front' ? 'frontUrl' : 'backUrl']: dataUrl,
+    };
+    supplier.cards = updatedCards;
+    supplier.updatedAt = new Date().toISOString();
+    this.save(list);
+    return supplier;
   }
 }
 

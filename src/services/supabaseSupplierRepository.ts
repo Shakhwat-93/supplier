@@ -2,6 +2,7 @@ import { Supplier, SupplierCategory, SupplierType } from '../types/supplier';
 import { ISupplierRepository } from './supplierRepository';
 import { supabase } from './supabaseClient';
 import { INITIAL_SUPPLIERS } from '../data/initialSuppliers';
+import { authService } from './authService';
 
 interface CsdSupplierRow {
   id: string;
@@ -354,6 +355,67 @@ export class SupabaseSupplierRepository implements ISupplierRepository {
 
   async dismissDuplicate(_duplicateId: string): Promise<boolean> {
     return true;
+  }
+
+  async replaceCardImage(supplierId: string, side: 'front' | 'back', file: File): Promise<Supplier> {
+    await this.ensureInitialized();
+
+    // 1. Convert File to base64
+    const base64Data = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+
+    // 2. Obtain auth headers
+    const authHeaders = authService.getAuthHeaders();
+
+    // 3. Call server replacement endpoint
+    const response = await fetch('/api/supplier/replace-card', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...authHeaders,
+      },
+      body: JSON.stringify({
+        supplierId,
+        side,
+        base64Data,
+        filename: file.name,
+      }),
+    });
+
+    const data = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      const errorMsg = data?.error || `Card replacement failed with status ${response.status}`;
+      console.error('[API ERROR] Failed to replace card image:', errorMsg);
+      throw new Error(errorMsg);
+    }
+
+    if (!data?.success || !data?.row) {
+      throw new Error('Invalid response received from card replacement endpoint');
+    }
+
+    const updatedSupplier = rowToSupplier(data.row);
+
+    // Update in fallback localStorage if present
+    try {
+      const local = localStorage.getItem('china_supplier_directory_v2');
+      if (local) {
+        const list: Supplier[] = JSON.parse(local);
+        const idx = list.findIndex((s) => s.id === supplierId);
+        if (idx !== -1) {
+          list[idx] = updatedSupplier;
+          localStorage.setItem('china_supplier_directory_v2', JSON.stringify(list));
+        }
+      }
+    } catch (e) {
+      console.warn('Could not update localStorage fallback cache:', e);
+    }
+
+    return updatedSupplier;
   }
 
   private fallbackGetAll(): Supplier[] {

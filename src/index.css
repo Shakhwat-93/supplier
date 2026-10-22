@@ -3,16 +3,40 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --sat: env(safe-area-inset-top, 0px);
+    --sar: env(safe-area-inset-right, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-[#f8fafc] text-slate-800 antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overscroll-behavior-y: none;
+  }
+
+  /* Prevent iOS zoom on inputs while keeping compact desktop scale */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, select, textarea {
+      font-size: 0.875rem;
+    }
   }
 }
 
 /* Custom subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -25,6 +49,15 @@
   background: #94a3b8;
 }
 
+/* Hide scrollbars for clean touch swipe ribbons */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Business card realistic shadow */
 .card-shadow {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
@@ -32,4 +65,12 @@
 
 .card-hover-shadow:hover {
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* Safe area padding utilities */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+.pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem));
 }

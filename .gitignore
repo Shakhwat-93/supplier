@@ -32,6 +32,7 @@ lerna-debug.log*
 
 # Temporary import bundles and screenshots
 supplier_import/
+supplier_delta_import_*/
 screenshot-*.png
 reference.png
 take-screenshot.js
