@@ -3349,5 +3349,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T21:16:15.747Z",
     "updated_at": "2026-10-31T21:16:15.747Z"
+  },
+  {
+    "id": "SUP-0084",
+    "supplier_code": "SUP-0084",
+    "company_name": "Yiwu Chun Jiang Toy Shop",
+    "company_name_cn": "义乌市春江玩具商行",
+    "brand": "Chun Jiang / 春江",
+    "category_id": "cat-toys",
+    "raw_category": "Action Figures, Building Blocks & Transformers (积木、变形金刚、奥特曼及人偶娃娃中高档玩具)",
+    "supplier_type": "Wholesaler / Distributor",
+    "contact_person": "Wu Chunjiang (吴春江)",
+    "position": "Owner / General Manager",
+    "phone": "13957956789; 15356799986",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "qq_messaging": "2050417186",
+    "address": "Shop No. 2306, 10th Street, 1st Floor, Area D, Gate 14, International Trade City, Yiwu, Zhejiang, China (国际商贸城D区一楼10街2306店面(14号门))",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Building blocks & construction sets (积木)",
+      "Deformed action robots & transformers (变形玩具)",
+      "Ultraman superhero figures & accessories (奥特曼系列)",
+      "Fashion dolls, figurines & hand-made collectibles (娃娃、手办模型)",
+      "Mid-to-high-end toys for domestic and export distribution"
+    ],
+    "products_services": "Wholesale of mid-to-high-end toys including building blocks, transformers, Ultraman superhero figures, and dolls at Yiwu International Trade City (义乌国际商贸城一区积木、变形金刚、奥特曼及各类公仔娃娃中高档玩具批发)",
+    "notes": "Showroom located at Shop No. 2306, 10th Street, 1st Floor, Area D, Gate 14, Yiwu International Trade City. Four bank accounts on card back (ABC, CCB, BOC, ICBC under He Xiaoxiao and Wu Chunjiang) intentionally excluded for privacy compliance. WeChat QR decoded successfully.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/MGe54aUEcKTY3iJaN-6-aqg",
+    "verification_status": "Card transcription verified; WeChat active; physical booth at Yiwu Trade City Area D Booth 2306",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0084/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T212011Z&X-Amz-Expires=604800&X-Amz-Signature=e0d9bf4dc566743bbea021f7ff79f32aa42183ab6722935939feff5da0e51bcd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0084/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T212011Z&X-Amz-Expires=604800&X-Amz-Signature=13921c5cadcb989a4b593537b3d9dd346286aa8dea3ab0e35f28d2ea947abb04&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T21:20:12.049Z",
+    "updated_at": "2026-10-31T21:20:12.049Z"
   }
 ];
