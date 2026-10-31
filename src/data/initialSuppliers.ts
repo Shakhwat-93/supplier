@@ -3187,7 +3187,7 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "created_at": "2026-10-31T21:00:40.052Z",
     "updated_at": "2026-10-31T21:00:40.052Z"
   },
-  {
+    {
     "id": "SUP-0080",
     "supplier_code": "SUP-0080",
     "company_name": "Feiyan Toys",
@@ -3198,7 +3198,7 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "supplier_type": "Wholesaler / Distributor",
     "contact_person": "Feiyan Toys Representative (飞艳玩具负责人)",
     "position": "Sales / Showroom Manager",
-    "phone": "15805798582; 18267067058; (86)0579-85280251",
+    "phone": "15805798582; 18267067058; 0579-85280251",
     "has_whatsapp": false,
     "email": null,
     "website": null,
@@ -3214,16 +3214,16 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
       "Global Building 16th floor exhibition hall display"
     ],
     "products_services": "Wholesale distribution and exhibition of toys, novelty products, and gifts at Yiwu International Trade City District 1 and Global Building Showroom (义乌国际商贸城一区玩具批发及环球大厦16楼精品玩具展厅展销)",
-    "notes": "Dual physical locations in Yiwu: Booth 2064, Street 6, Area D, District 1, International Trade City AND Exhibition Hall at Room 1611, 16th Floor, Global Building, No. 168 Jinrong 6th Street. Dual WeChat QR codes printed on card corresponding to mobiles 15805798582 and 18267067058.",
+    "notes": "Dual physical locations in Yiwu: Booth 2064, Street 6, Area D, District 1, International Trade City AND Exhibition Hall at Room 1611, 16th Floor, Global Building, No. 168 Jinrong 6th Street. Dual WeChat QR codes printed on card corresponding to mobiles 15805798582 and 18267067058. Verified high-res card images uploaded.",
     "qr_status": "visible_not_decoded",
     "qr_payload": "WeChat 1: 15805798582; WeChat 2: 18267067058",
     "verification_status": "Card transcription verified; physical shop at Yiwu Trade City District 1 Booth 2064 & Global Building showroom Room 1611",
-    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0080/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T210341Z&X-Amz-Expires=604800&X-Amz-Signature=ec0c22b32f0466c9223d1030eee69bdf52dfb9d5ce07cdcd154e371b72973b3a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0080/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T210341Z&X-Amz-Expires=604800&X-Amz-Signature=e5fbe06d138a1305bbd89e96ccc9900b97c32bd0c02e26ed1719b5dbe786d8d0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0080/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T223954Z&X-Amz-Expires=604800&X-Amz-Signature=32e23ea9188f6c34fde0036efe94ae8f4475f699118197388afa6443c0e95a1c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0080/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T223954Z&X-Amz-Expires=604800&X-Amz-Signature=b924c754fa913ce397c8ed9e6c5a2b5732e484c18d9139fd3f6347a0b996a91b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
     "is_favorite": false,
     "is_demo": false,
     "created_at": "2026-10-31T21:03:42.386Z",
-    "updated_at": "2026-10-31T21:03:42.386Z"
+    "updated_at": "2026-10-31T22:39:54.824Z"
   },
   {
     "id": "SUP-0081",
