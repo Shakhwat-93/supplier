@@ -3311,5 +3311,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T21:12:39.557Z",
     "updated_at": "2026-10-31T21:12:39.557Z"
+  },
+  {
+    "id": "SUP-0083",
+    "supplier_code": "SUP-0083",
+    "company_name": "Jin Shuizi Metal Chain",
+    "company_name_cn": "金穗子五金饰链",
+    "brand": "金穗子 / JIN SHUIZI",
+    "category_id": "cat-accessories",
+    "raw_category": "Hardware Chains, Bag Chains & Metal Accessories (五金饰链、服饰箱包铝链、铁链加工制造)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "Jin Xiaofang (金筱芳 / 金小芳)",
+    "position": "Owner / Representative",
+    "phone": "13857976558; 18006796988",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "address": "Booths 3076-3077, 3rd Floor, Gate 65/66, District 3, International Trade Mart, Yiwu 322000, Zhejiang, China (中国义乌国际商贸城三区三楼3076-3077/L3-3076)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Aluminum chains & decorative lightweight metal chains (铝链)",
+      "Iron chains & heavy duty bag/hardware chains (铁链)",
+      "Clothing & fashion garment chains (服饰装饰链条)",
+      "Handbag & luggage shoulder strap chains (箱包链条)",
+      "Shoe chains, hat chains & lighting fixture hanging chains (鞋链、帽链、灯饰吊链)",
+      "OEM and ODM custom chain processing & manufacturing (各种链条加工制造)"
+    ],
+    "products_services": "Processing and manufacturing of iron chains and aluminum chains for garments, handbags, footwear, headwear, and lighting fixtures (专业加工制造服饰、箱包、鞋帽、灯饰用各种铝链、铁链等五金饰链，承接OEM/ODM定制)",
+    "notes": "Showroom located at Booths 3076-3077, 3rd Floor, Gate 65/66, District 3, Yiwu International Trade City. WeChat QR visible on card; WeChat reachable via mobile numbers 13857976558 and 18006796988.",
+    "qr_status": "visible_not_decoded",
+    "qr_payload": "WeChat: 13857976558 / 18006796988",
+    "verification_status": "Card transcription verified; physical showroom at Yiwu Trade City District 3 Booths 3076-3077",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0083/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T211615Z&X-Amz-Expires=604800&X-Amz-Signature=390503b0d333ae0054cd1cd0453774782cbc1b9202e474aeafab20edaa5069ea&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0083/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T211615Z&X-Amz-Expires=604800&X-Amz-Signature=b97c73d9638d857fdf44cedcf1388853ab083bfd8cfa5735a54ed6cf7eca88ad&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T21:16:15.747Z",
+    "updated_at": "2026-10-31T21:16:15.747Z"
   }
 ];
