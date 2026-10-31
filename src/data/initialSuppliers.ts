@@ -3160,5 +3160,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T20:54:32.595Z",
     "updated_at": "2026-10-31T20:54:32.595Z"
+  },
+  {
+    "id": "SUP-0079",
+    "supplier_code": "SUP-0079",
+    "company_name": "Tianxiang Pen Industry",
+    "company_name_cn": "天翔笔业",
+    "brand": "TIANXIANG / 天翔",
+    "category_id": "cat-stationery",
+    "raw_category": "Novelty Pens, Plush Pens & Writing Instruments (天翔笔业、毛绒笔、卡通公仔笔及创意文具)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "Zhang Yiliang (张宜亮)",
+    "position": "Owner / General Manager",
+    "phone": "13157937788; 13216211362; (86)0579-85163209",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "qq_messaging": "312181178",
+    "address": "Shop No. 21288, 10th Street, Gate 52, 1st Floor, Area 3, International Trade City Phase 2, Yiwu, Zhejiang, China (国际商贸城二期三区1楼52号门10街21288店面)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Plush & pompom novelty pens (毛绒公仔笔、毛球笔)",
+      "Cartoon animal pens (unicorn, swan, monster eyes, pineapple pens) (独角兽、天鹅、菠萝造型笔)",
+      "Gel pens, ballpoint pens & rollerball pens (中性笔、圆珠笔)",
+      "Flower pens & decorative desk stationery (仿真花造型花笔)",
+      "Custom OEM & promotional gift pens (文具礼品定制及来样订做)"
+    ],
+    "products_services": "Manufacturing, wholesale, and export of novelty plush pens, cartoon animal pens, flower pens, and creative writing instruments at Yiwu International Trade City (专业生产销售各类毛绒笔、卡通造型公仔笔、仿真花造型笔及创意文具，欢迎新老客户光临惠顾来样订做)",
+    "notes": "Showroom located at Shop 21288, 10th Street, Gate 52, 1st Floor, District 3, Phase 2, Yiwu International Trade City. ABC bank account on card front (6228 48038 06628 80315 under Zhang Yiliang) intentionally excluded for privacy compliance. Stylized candy WeChat QR visible on card; WeChat reachable via mobile numbers.",
+    "qr_status": "visible_not_decoded",
+    "qr_payload": "WeChat: 13157937788 / 13216211362",
+    "verification_status": "Card transcription verified; physical showroom at Yiwu Trade City Phase 2 District 3 Booth 21288",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0079/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T210039Z&X-Amz-Expires=604800&X-Amz-Signature=bb43c12200706cd5b2678056955da1f7961a5cbdce34ee1694063b89a52f3c7d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0079/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T210039Z&X-Amz-Expires=604800&X-Amz-Signature=fc2d25eb7a361fcc43c18f40e3fff64e138993d1def25c9db0a9d4c17e375fae&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T21:00:40.052Z",
+    "updated_at": "2026-10-31T21:00:40.052Z"
   }
 ];
