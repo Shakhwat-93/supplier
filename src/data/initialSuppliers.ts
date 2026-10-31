@@ -3009,5 +3009,41 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T20:30:01.291Z",
     "updated_at": "2026-10-31T20:30:01.291Z"
+  },
+  {
+    "id": "SUP-0075",
+    "supplier_code": "SUP-0075",
+    "company_name": "Factory Samarda Buttons (Niuyue Garment Trimmings)",
+    "company_name_cn": "纽悦服装辅料",
+    "brand": "SAMARDA / 纽悦",
+    "category_id": "cat-accessories",
+    "raw_category": "Buttons, Garment Trimmings & Hardware (钮扣、五金及塑料服装辅料)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "Tony Chen (陈谦)",
+    "position": "Sales / Factory Representative",
+    "phone": "18857913706",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "address": "Booth No. 28326, Street 4, 3rd Floor, Gate 69, District 3, International Trade City, Yiwu, Zhejiang, China (浙江义乌国际商贸城3区69号门3楼四街28326)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Garment buttons (resin, plastic, metal & alloy buttons)",
+      "Hardware trimming accessories & metal fasteners (五金制品)",
+      "Plastic trimming products & snaps (塑料制品)",
+      "Custom button manufacturing & sample production"
+    ],
+    "products_services": "Production and wholesale of garment buttons, metal hardware accessories, and plastic accessories (专业生产销售钮扣、服装五金制品及塑料辅料配件)",
+    "notes": "Showroom operating at Booth 28326, Street 4, 3rd Floor, Gate 69, District 3, Yiwu International Trade City. ICBC bank account on card front (6222 08120... under Chen Qian) intentionally excluded for privacy compliance. WeChat QR decoded successfully.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/MDp5XwcLpLh1N91uejsxwVs",
+    "verification_status": "Card transcription verified; WeChat active; physical showroom at Yiwu Trade City District 3",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0075/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T204530Z&X-Amz-Expires=604800&X-Amz-Signature=fa187fa9fd688951a72e8493d95f9970ed5fb7b3635302c67f684e991133c12c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0075/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T204530Z&X-Amz-Expires=604800&X-Amz-Signature=fdefad2bbcc3b2e9a01600626321de8cb13f0dc1a5ee6f6644a53aff34b6eca2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T20:45:31.244Z",
+    "updated_at": "2026-10-31T20:45:31.244Z"
   }
 ];
