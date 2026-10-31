@@ -2635,5 +2635,42 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     },
     "createdAt": "2026-10-31T19:43:30.305Z",
     "updatedAt": "2026-10-31T19:43:30.305Z"
+  },
+  {
+    "id": "SUP-0068",
+    "supplier_code": "SUP-0068",
+    "company_name": "Yue Jia Business Hotel (Yue Jia Hotel)",
+    "company_name_cn": "悦嘉商务宾馆",
+    "brand": "YUE JIA HOTEL",
+    "category_id": "cat-other",
+    "raw_category": "Business Hotel & Market Accommodation (商务宾馆 / 市场商旅住宿)",
+    "supplier_type": "Supplier",
+    "contact_person": "Reservation Desk / 前台预订 (Hotline)",
+    "position": "Reservation / Front Desk",
+    "phone": "0579-81582188; Fax: 0579-85559177",
+    "has_whatsapp": false,
+    "email": "",
+    "website": "",
+    "qq_messaging": "",
+    "address": "21 Building 1 Area Yinhai, Yiwu, Zhejiang, China (Behind Yinhai International Mansion) / 浙江省义乌市银海一区21幢(银海国际大厦后面)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Business hotel accommodation",
+      "Yiwu wholesale market buyer lodging",
+      "Proximity to International Trade City Phase 2 & 3H",
+      "Room reservation hotline service"
+    ],
+    "products_services": "Business hotel and accommodation for buyers and traders visiting Yiwu International Trade City (义乌国际商贸城二期、三期H区周边采购商商务宾馆住宿及订房服务)",
+    "notes": "Taxi navigation card for Yue Jia Hotel in Yiwu. Provided for foreign buyers with \"PLEASE TAKE ME TO\" bilingual directions to Yinhai Area 1 behind Yinhai International Mansion. Map on reverse indicates walking proximity to Yiwu International Trade City Phase 2 & Phase 3 District H.",
+    "qr_status": "no_qr",
+    "qr_payload": null,
+    "verification_status": "Card transcription verified; physical taxi card in Yiwu Trade City district",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0068/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T195903Z&X-Amz-Expires=604800&X-Amz-Signature=7a0d8b6640374f26c1760a5ec52011002973f6aee8824fc7b309b1488526e9dd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0068/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T195903Z&X-Amz-Expires=604800&X-Amz-Signature=88ef5339517fc3cccb55b7c7e7f9cbe4c8fedc64b25618f5e66837ac85dfe896&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T19:59:03.758Z",
+    "updated_at": "2026-10-31T19:59:03.758Z"
   }
 ];
