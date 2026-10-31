@@ -2672,5 +2672,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T19:59:03.758Z",
     "updated_at": "2026-10-31T19:59:03.758Z"
+  },
+  {
+    "id": "SUP-0069",
+    "supplier_code": "SUP-0069",
+    "company_name": "Jingxi Cup Industry",
+    "company_name_cn": "靖烯杯业",
+    "brand": "JINGXI",
+    "category_id": "cat-home",
+    "raw_category": "Drinkware, Tumblers & Vacuum Flasks (杯业 / 保温杯及随手杯)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "Kou Chunying (寇春迎)",
+    "position": "General Manager (总经理)",
+    "phone": "18058488885; 15267958882",
+    "has_whatsapp": false,
+    "email": "",
+    "website": "",
+    "qq_messaging": "",
+    "address": "Booth No. 21230, 1st Floor, District 3, Yiwu International Trade City (Next to South Gate 1), Yiwu, Zhejiang, China (义乌国际商贸城三区一楼21230号摊位 南一号门旁)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Stainless steel insulated tumblers & travel mugs",
+      "Vacuum flasks & thermal water bottles",
+      "Gradient beverage tumblers with straws",
+      "Portable outdoor water bottles & kettles",
+      "Custom logo drinkware manufacturing"
+    ],
+    "products_services": "Manufacturer of stainless steel insulated tumblers, vacuum flask water bottles, gradient iced drink cups with straws, and portable drinkware (不锈钢保温杯、随手吸管杯、真空保温水杯及户外便携水壶批发与定制生产)",
+    "notes": "Operating physical showroom at Booth No. 21230, next to South Gate 1 on the 1st Floor of District 3, Yiwu International Trade City. WeChat customer service QR code successfully decoded and active.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/EHVWkUXfQe5Rb1EB2UIbX9o",
+    "verification_status": "Card transcription verified; WeChat active; physical booth at Yiwu Trade City District 3",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0069/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T200124Z&X-Amz-Expires=604800&X-Amz-Signature=64c0ef074045373f0684b88a5155ec40d349c7a90954df319e2379fa66ae496e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0069/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T200124Z&X-Amz-Expires=604800&X-Amz-Signature=c42ca24fdbb8e89cafdbb5b37f84b90b6298f88cb57abb791977111c420769f2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T20:01:24.354Z",
+    "updated_at": "2026-10-31T20:01:24.354Z"
   }
 ];
