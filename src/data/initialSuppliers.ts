@@ -3387,5 +3387,42 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T21:20:12.049Z",
     "updated_at": "2026-10-31T21:20:12.049Z"
+  },
+  {
+    "id": "SUP-0085",
+    "supplier_code": "SUP-0085",
+    "company_name": "Guangdong Chenghai Xiangfeng Toys Shop",
+    "company_name_cn": "广东澄海翔丰玩具",
+    "brand": "Xingfeng Toys / 翔丰玩具 (XF)",
+    "category_id": "cat-toys",
+    "raw_category": "Remote Control & Electric Toy Vehicles (生产销售各种遥控车、电动车及礼品玩具)",
+    "supplier_type": "Manufacturer & Wholesaler",
+    "contact_person": "Wu Yunxing (吴允兴); Ms. Luo (罗小姐); Mr. Wu (吴先生)",
+    "position": "Owner / General Manager",
+    "phone": "15257979764; 13588959576; 0579-85287565",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "qq_messaging": "1556425033",
+    "address": "Shop No. 2062, 6th Street, 1st Floor, Area D, District 1, International Trade City, Yiwu, Zhejiang, China (义乌国际商贸城一区一楼D区6街2062店面)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Remote control RC cars & high-speed off-road vehicles (遥控车、高速车、越野车)",
+      "Electric ride-ons & battery-powered toy vehicles (电动车、工程车)",
+      "Novelty gift toys & promotional toys (礼品玩具)",
+      "OEM & ODM production and wholesale distribution (生产销售、来样定制)"
+    ],
+    "products_services": "Manufacturing, wholesale, and export distribution of RC cars, electric vehicles, and novelty gift toys at Yiwu International Trade City District 1 (广东澄海工厂直销、义乌国际商贸城实体批发：各种遥控车、电动车及礼品玩具生产销售)",
+    "notes": "Showroom located at Shop No. 2062, 6th Street, 1st Floor, Area D, District 1, Yiwu International Trade City. Factory base in Chenghai, Guangdong. Three bank account numbers on card back (BOC, ICBC, CCB under Wu Yunxing) excluded for privacy compliance. WeChat QR decoded successfully.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/MPeWIIhvEBcPnSgw60Mlnac",
+    "verification_status": "Card transcription verified; WeChat active; physical showroom at Yiwu Trade City District 1 Area D Booth 2062",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0085/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T213328Z&X-Amz-Expires=604800&X-Amz-Signature=1f37d5029bd117331f4792fed4d7016aff6474a34073bd482964f17c8793ab17&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0085/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T213328Z&X-Amz-Expires=604800&X-Amz-Signature=358e1ce4be80917f8eb54c733c906edfebcdb9effae970095952b250c74c02c7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T21:33:28.221Z",
+    "updated_at": "2026-10-31T21:33:28.221Z"
   }
 ];
