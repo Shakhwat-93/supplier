@@ -3084,5 +3084,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T20:49:25.386Z",
     "updated_at": "2026-10-31T20:49:25.386Z"
+  },
+  {
+    "id": "SUP-0077",
+    "supplier_code": "SUP-0077",
+    "company_name": "Zhejiang Dongyang Qianghui Umbrella Co., Ltd.",
+    "company_name_cn": "浙江东阳市强辉伞业有限公司",
+    "brand": "QIANGHUI® / 强辉®",
+    "category_id": "cat-accessories",
+    "raw_category": "Umbrellas & Rainwear (广告伞、外贸伞、礼品伞制伞定制)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "Jin Haibin (金海滨)",
+    "position": "General Manager / Factory Owner",
+    "phone": "13566739430; 13758935255; 13967981805",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "qq_messaging": "377856715",
+    "address": "Shop 10587, 10th Street, Area F, District 2, Yiwu International Trade City, Yiwu, Zhejiang, China (门市部: 义乌国际商贸城二区F区10587店10街; 厂址: 浙江省东阳市江北开发区)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Advertising umbrellas & promotional umbrellas (广告伞定制)",
+      "Foreign trade export umbrellas (外贸伞)",
+      "Gift umbrellas & corporate giveaways (礼品伞)",
+      "Straight stick umbrellas & folding umbrellas (直杆伞、折叠伞)",
+      "Custom logo printing & umbrella frame OEM manufacturing"
+    ],
+    "products_services": "Manufacturing, customization, and export of advertising umbrellas, foreign trade umbrellas, and gift umbrellas (专业研发生产定做各类广告伞、外贸伞、礼品伞等)",
+    "notes": "Showroom located at Shop 10587, 10th Street, Area F, District 2, Yiwu International Trade City. Factory based in Jiangbei Development Zone, Dongyang City. Four bank accounts on card back (ICBC, ABC, CCB, BOC under Jin Haibin) intentionally excluded for privacy compliance. No QR code printed on card.",
+    "qr_status": "none",
+    "qr_payload": null,
+    "verification_status": "Card transcription verified; physical showroom at Yiwu Trade City District 2; factory in Dongyang Jiangbei Development Zone",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0077/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T205112Z&X-Amz-Expires=604800&X-Amz-Signature=ddba15e9d43424e0d2e3a01d5d5900eb502aed6f1ff352ce3eae8c187f38ab5d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0077/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T205112Z&X-Amz-Expires=604800&X-Amz-Signature=2e12d6d37c0ee8d3f553ca778fa674bf0eb259536d3655db1344bb816367a4b9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T20:51:12.546Z",
+    "updated_at": "2026-10-31T20:51:12.546Z"
   }
 ];
