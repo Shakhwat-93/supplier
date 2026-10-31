@@ -2748,5 +2748,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T20:03:41.790Z",
     "updated_at": "2026-10-31T20:03:41.790Z"
+  },
+  {
+    "id": "SUP-0071",
+    "supplier_code": "SUP-0071",
+    "company_name": "Shangyu City Tian Bo Make An Umbrella Co., Ltd. (Tianbo Umbrella)",
+    "company_name_cn": "上虞市天波制伞有限公司",
+    "brand": "TIAN BO / 天波制伞",
+    "category_id": "cat-accessories",
+    "raw_category": "Umbrellas & Rainwear (制伞 / 晴雨伞及伞具配件)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "He Hao Fang (何浩芳)",
+    "position": "Sales / Factory Representative",
+    "phone": "13989432818; Factory Rep: 13806760399; Fax: 0579-85183346; 0579-82682581",
+    "has_whatsapp": false,
+    "email": "tianbo1888@yeach.net",
+    "website": "http://www.tianbo1888.cn",
+    "qq_messaging": "1045959352",
+    "address": "Shop No. F1-10574, Street 10, Phase 2, Yiwu International Trade City, Yiwu, Zhejiang, China (义乌市国际商贸城二期十街F1-10574)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Umbrellas & rainwear",
+      "Folding umbrellas & straight umbrellas",
+      "Sun & UV protection parasols",
+      "Advertising & promotional custom umbrellas",
+      "OEM/ODM umbrella manufacturing"
+    ],
+    "products_services": "Manufacturer of folding umbrellas, straight umbrellas, sun parasols, advertising gift umbrellas, and custom OEM umbrella production (专业生产三折伞、直杆伞、遮阳伞、广告礼品伞及外贸伞具定制生产)",
+    "notes": "Manufacturer based in Shangyu (China umbrella manufacturing hub) with showroom at Shop F1-10574, Street 10, Phase 2, Yiwu International Trade City. WeChat QR decoded and active. Attached images preserved in R2 storage per user confirmation; product scope categorized strictly under Umbrellas & Rainwear.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/MG-k-6Fbq28Pom-2OwbOmBw",
+    "verification_status": "Card transcription verified; official site & WeChat active; booth F1-10574 at Yiwu Trade City Phase 2",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0071/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T200929Z&X-Amz-Expires=604800&X-Amz-Signature=28025854bf26869875295737c4316e5f50cf01e01cfc7640689cda35c98125ee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0071/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T200929Z&X-Amz-Expires=604800&X-Amz-Signature=00638e0f3819f8457aba7053b456d8bdc29645e8257d8a6ca06aba35f04f9a5d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T20:09:29.312Z",
+    "updated_at": "2026-10-31T20:09:29.312Z"
   }
 ];
