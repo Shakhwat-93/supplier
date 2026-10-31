@@ -2891,5 +2891,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T20:23:34.302Z",
     "updated_at": "2026-10-31T20:23:34.302Z"
+  },
+  {
+    "id": "SUP-0073",
+    "supplier_code": "SUP-0073",
+    "company_name": "Jinsheng Toy Factory",
+    "company_name_cn": "金盛玩具厂",
+    "brand": "JINSHENG TOY FACTORY / 金盛玩具",
+    "category_id": "cat-toys",
+    "raw_category": "Festival Costumes, Electronic & Novelty Toys (节日服装、声光电动及新奇特玩具)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "He Liqiao (何利巧)",
+    "position": "Owner / Factory Manager",
+    "phone": "13906890461; (86)0579-85282144",
+    "has_whatsapp": false,
+    "email": "",
+    "website": "",
+    "qq_messaging": "297122095",
+    "address": "Booth No. D1-2144, Street 7, District D1, Futian Market, International Trade City, Yiwu, Zhejiang, China (义乌国际商贸城福田市场7街D1-2144号)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Children festival costumes & cosplay outfits (Halloween, role-play uniforms, superhero, fairy)",
+      "Sound-controlled & voice-activated toys (声控玩具)",
+      "Remote control & telecontrol toys (遥控玩具)",
+      "Electromotion & inertia toys (电动与惯性玩具)",
+      "Halloween props, spooky & novelty trick toys (新奇特及派对恶搞玩具)"
+    ],
+    "products_services": "Manufacturer of children festival costumes, role-play outfits, sound-controlled and remote control electronic toys, and Halloween novelty props (儿童角色扮演节日服装、演出服、声光电动遥控玩具及万圣节新奇特玩具批发生产)",
+    "notes": "Folded 2-fold card. Operating wholesale showroom at Booth D1-2144, Street 7, District D1, Futian Market (Yiwu International Trade City). Bank accounts on card (BOC, CCB, ICBC under He Liqiao) intentionally excluded for privacy compliance. WeChat QR decoded successfully.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/MNdIB3LAtyDcGkyqWSs10Bk",
+    "verification_status": "Card transcription verified; WeChat active; physical showroom at Yiwu Futian Market District D1",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0073/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T202647Z&X-Amz-Expires=604800&X-Amz-Signature=e85398cb3ec75083bb612e7d083e389c4e7894491bad4bac5b1e32159ef18ec0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0073/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T202647Z&X-Amz-Expires=604800&X-Amz-Signature=1d306f4c3a21dd0644090d3761968162b209ef0fca48d748418186af24109cb1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T20:26:47.092Z",
+    "updated_at": "2026-10-31T20:26:47.092Z"
   }
 ];
