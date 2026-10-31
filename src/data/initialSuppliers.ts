@@ -2929,5 +2929,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T20:26:47.092Z",
     "updated_at": "2026-10-31T20:26:47.092Z"
+  },
+  {
+    "id": "SUP-0074",
+    "supplier_code": "SUP-0074",
+    "company_name": "GuangDong ChengHai WeiZuan Toys Co., Ltd. (Weizuan Toys)",
+    "company_name_cn": "广东澄海炜钻玩具有限公司",
+    "brand": "WEIZUAN TOYS® / 炜钻玩具",
+    "category_id": "cat-toys",
+    "raw_category": "Remote Control (R/C), Electric & Model Toys (遥控、电动及模型玩具)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "Chen Jun Wei (陈俊伟)",
+    "position": "General Manager / Factory Owner",
+    "phone": "13588692789; 18868576663; Showroom 1: (86)0579-85288633; Showroom 2: (86)0579-85292338",
+    "has_whatsapp": false,
+    "email": "349109229@qq.com",
+    "website": "",
+    "qq_messaging": "1431165933",
+    "address": "Showroom 1: East Auxiliary Room, 1st Floor, Region D, Rooms F1-163-167; Showroom 2: Store No. E1-2932, Street 11, District E, Phase 1, Yiwu International Trade City, Yiwu, Zhejiang, China (义乌国际商贸城一楼D区东辅房F1-163-167 / 一期一楼11街E区2932店); Factory: Chenghai, Shantou, Guangdong (广东澄海)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Remote control (R/C) cars, drones & vehicles (各种高中低档遥控玩具)",
+      "Electric & electromotion toys (电动玩具)",
+      "Scale model toys & vehicles (模型玩具系列产品)",
+      "High, medium & economy grade toy series (高、中、低档系列玩具)",
+      "Chenghai export toy manufacturing & wholesale (澄海玩具外贸出口与定制)"
+    ],
+    "products_services": "Manufacturer of various grades of remote control (R/C) toys, electric toys, and scale model toy series from Chenghai toy manufacturing base (专业生产批发各种高中低档遥控、电动、模型玩具系列产品，承接内销外贸订单)",
+    "notes": "Dual wholesale showrooms operating in Yiwu International Trade City: Region D East Auxiliary Rooms F1-163-167 and Phase 1 Street 11 Booth E1-2932. Manufacturing base in Chenghai, Shantou, Guangdong. Bank accounts on reverse (BOC under Chen Junwei and ABC under Huang Wenyuan) intentionally excluded for privacy compliance. WeChat QR decoded successfully.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: http://weixin.qq.com/r/O447I5LEDM9zrdZA99sp",
+    "verification_status": "Card transcription verified; WeChat active; dual showrooms at Yiwu Trade City Phase 1 & factory in Chenghai",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0074/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T203001Z&X-Amz-Expires=604800&X-Amz-Signature=94dd1fbe84540598ca5cbf11a6d73126c6b8ed8d28720de352302894dfa9356c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0074/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T203001Z&X-Amz-Expires=604800&X-Amz-Signature=6c7e1b2c6efd8a0a6e8ee032afa383536652e3901464ca77de6519364f1fb7ad&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T20:30:01.291Z",
+    "updated_at": "2026-10-31T20:30:01.291Z"
   }
 ];
