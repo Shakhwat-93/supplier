@@ -3273,5 +3273,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T21:10:19.938Z",
     "updated_at": "2026-10-31T21:10:19.938Z"
+  },
+  {
+    "id": "SUP-0082",
+    "supplier_code": "SUP-0082",
+    "company_name": "Yiwu Yunfan Toys Co., Ltd. (Yiwu Yu Fan Toys)",
+    "company_name_cn": "义乌市云帆玩具有限公司",
+    "brand": "YUNFAN / 云帆",
+    "category_id": "cat-toys",
+    "raw_category": "Remote Control (R/C) Toys, Drones & Alloy Vehicle Models (遥控车、四轴无人机、飞碟及合金车模)",
+    "supplier_type": "Wholesaler / Distributor",
+    "contact_person": "Wang Qian (王倩); Song Peipei (宋培培)",
+    "position": "Owners / Sales Representatives",
+    "phone": "18860206051",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "qq_messaging": "3083560757",
+    "address": "Booth No. 2065, 6th Street, Area D, Gate 11, Phase 1, Yiwu International Trade City, Yiwu, Zhejiang, China (义乌市国际商贸城一期D区6街2065摊位)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Remote control rock crawlers & off-road trucks (高中小档遥控车、越野攀爬车)",
+      "Camera quadcopters & folding drones (四轴航拍无人机、飞碟)",
+      "Die-cast alloy sports cars & classic cars (合金车模型)",
+      "RC drift cars, stunt cars & racing vehicles",
+      "Yiwu Market Phase 1 wholesale toy supply"
+    ],
+    "products_services": "Wholesale distribution of remote control vehicles, quadcopters, camera drones, flying saucers, and die-cast alloy model cars at Yiwu International Trade City (义乌国际商贸城一区遥控车模、四轴航拍无人机、飞碟及合金车模批发销售)",
+    "notes": "Showroom located at Booth 2065, 6th Street, Area D, Gate 11, Phase 1, Yiwu International Trade City. Four bank accounts on card back (ICBC, CCB, ABC under Song Zhongguo and Wang Qianqian) intentionally excluded for privacy compliance. WeChat QR decoded successfully.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/EOPDAQefJtzGR92yVabFJ6w?s=2",
+    "verification_status": "Card transcription verified; WeChat active; physical booth at Yiwu Trade City Phase 1 Area D Booth 2065",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0082/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T211239Z&X-Amz-Expires=604800&X-Amz-Signature=2b30e80a675d3ed2f1b12789930565ad059c936f1f4fe446646e182bf160b7e5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0082/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T211239Z&X-Amz-Expires=604800&X-Amz-Signature=0433a2ec2a2dbd56e4d1fc04ed8d7102decbb2c1577d4b4cc01e4c55c975456e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T21:12:39.557Z",
+    "updated_at": "2026-10-31T21:12:39.557Z"
   }
 ];
