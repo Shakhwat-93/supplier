@@ -3236,5 +3236,42 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T21:03:42.386Z",
     "updated_at": "2026-10-31T21:03:42.386Z"
+  },
+  {
+    "id": "SUP-0081",
+    "supplier_code": "SUP-0081",
+    "company_name": "Jing Jing Keychain",
+    "company_name_cn": "晶晶挂件",
+    "brand": "Jing Jing / 晶晶",
+    "category_id": "cat-accessories",
+    "raw_category": "Keychains, Bag Charms & Hanging Pendants (钥匙扣、各类包包装饰挂件、公仔挂饰)",
+    "supplier_type": "Wholesaler / Distributor",
+    "contact_person": "Jin Jing (金晶)",
+    "position": "Owner / Representative",
+    "phone": "13958408586",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "address": "Shop No. 2733, 7th Street, Area E, 1st Floor, District 1, Yiwu International Trade City, Yiwu, Zhejiang, China (义乌国际商贸城一区一楼E区7街2733店)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Keychains & novelty keyring charms (钥匙扣)",
+      "Cartoon animal pendants & bag charms (各类挂件、公仔挂件)",
+      "Acrylic & PVC hanging accessories (亚克力/软胶挂件)",
+      "Fashion backpack accessories & bell charms",
+      "Yiwu International Trade City District 1 wholesale supply"
+    ],
+    "products_services": "Wholesale of keychains, cartoon bag charms, novelty pendants, and backpack accessories at Yiwu International Trade City District 1 (义乌国际商贸城一区精品钥匙扣、各类卡通公仔挂件及箱包装饰配件批发)",
+    "notes": "Showroom located at Shop 2733, 7th Street, Area E, 1st Floor, District 1, Yiwu International Trade City. Two bank accounts on card back (CCB, ICBC under Jin Jing) intentionally excluded for privacy compliance. WeChat QR decoded successfully.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/MDtM_3K-BzSynBxqDYHnkbY?s=2",
+    "verification_status": "Card transcription verified; WeChat active; physical booth at Yiwu Trade City District 1 Booth 2733",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0081/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T211019Z&X-Amz-Expires=604800&X-Amz-Signature=81c49450f588c59ef2ecb71ec638ea6ab0b2f089b7a414222ed61c058ea05682&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0081/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T211019Z&X-Amz-Expires=604800&X-Amz-Signature=17c606b99203b7a62c8492e0fa0ab72ed7e9598e0c90c926256b66122afc55a4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T21:10:19.938Z",
+    "updated_at": "2026-10-31T21:10:19.938Z"
   }
 ];
