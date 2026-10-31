@@ -2710,5 +2710,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T20:01:24.354Z",
     "updated_at": "2026-10-31T20:01:24.354Z"
+  },
+  {
+    "id": "SUP-0070",
+    "supplier_code": "SUP-0070",
+    "company_name": "Yiwu Shuaite Toys Co., Ltd.",
+    "company_name_cn": "义乌市帅特玩具有限公司",
+    "brand": "SHUAITE TOYS / 帅特玩具",
+    "category_id": "cat-toys",
+    "raw_category": "Electronic Flash & LED Light-up Toys (电子闪光及发光玩具)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "Li Jianfeng (李剑锋)",
+    "position": "Vice President of Toy Association / General Manager (玩具协会副会长)",
+    "phone": "13705791133; (86)0579-85282151",
+    "has_whatsapp": false,
+    "email": "ST21772000@163.com",
+    "website": "http://www.ywshuaite.com",
+    "qq_messaging": "2930292917 (Shop); 601332341 (Direct)",
+    "address": "Booth No. 2151, Street 7, 1st Floor, District D, Phase 1, Yiwu International Trade City, Yiwu, Zhejiang, China (义乌国际商贸城一期D区一楼七街2151摊位)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Electronic flash toys & LED novelties",
+      "LED flashing jump ropes",
+      "Flashing LED headbands & hair accessories",
+      "Light-up festival toys & party props",
+      "Custom OEM/ODM electronic toy manufacturing"
+    ],
+    "products_services": "Specializes in customizing and manufacturing electronic flash toys, flash jump ropes, flash headbands and other LED-related light-up novelty products (专业生产定制各种电子闪光玩具、闪光跳绳、闪光头扣等发光系列玩具及OEM/ODM定制)",
+    "notes": "Operates manufacturing facility in Heyetang Industrial Area and showroom at Booth 2151, District D, Phase 1, Yiwu International Trade City. Key recommended supplier on Yiwugou (Shop 2151) and 1688 (shop0680960419sz0.1688.com). Contact Li Jianfeng serves as Vice President of Toy Association. Bank accounts on reverse (ABC, BOC, Chouzhou Bank under Li Jianfeng / Tong Maoying) intentionally excluded from contact fields for privacy compliance.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/MPbgh2yQtLat9UKu-QFIj8A",
+    "verification_status": "Card transcription verified; 1688, official site & WeChat active; Yiwu Toy Association executive",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0070/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T200341Z&X-Amz-Expires=604800&X-Amz-Signature=6bf8e3ba541699e8a86a2787cf49584155691eb97acb276e3d401a8bc5a29077&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0070/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T200341Z&X-Amz-Expires=604800&X-Amz-Signature=006816c448f8a1d89e824f5b466527a08cbc3669ba803f83f4713e0e7bda6f77&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T20:03:41.790Z",
+    "updated_at": "2026-10-31T20:03:41.790Z"
   }
 ];
