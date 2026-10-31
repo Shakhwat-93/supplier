@@ -3637,5 +3637,43 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-31T22:00:14.344Z",
     "updated_at": "2026-10-31T22:00:14.344Z"
+  },
+  {
+    "id": "SUP-0092",
+    "supplier_code": "SUP-0092",
+    "company_name": "Chaote Diamond Ornaments",
+    "company_name_cn": "超特钻饰",
+    "brand": "TC / 超特钻饰",
+    "category_id": "cat-accessories",
+    "raw_category": "Rhinestone Mesh, Crystal Trims, Hotfix Diamond Sheets & Garment Accessories (超特钻饰、烫钻胶网、水钻网布、水钻饰条及服饰鞋包辅料)",
+    "supplier_type": "Manufacturer",
+    "contact_person": "Pan Beilei (潘蓓蕾)",
+    "position": "Sales / Representative",
+    "phone": "13868396488",
+    "has_whatsapp": false,
+    "email": null,
+    "website": null,
+    "qq_messaging": "88409469",
+    "address": "Booth 27965, 6th Street, 3rd Floor, Gate 65, International Trade City, Yiwu, Zhejiang, China (义乌国际商贸城65号门三楼6街27965商位); Factory: Heyetang Industrial Zone, Futian Street, Yiwu City, Zhejiang Province (浙江省义乌市福田街道荷叶塘工业区)",
+    "city": "Yiwu",
+    "province": "Zhejiang",
+    "product_range": [
+      "Hotfix rhinestone mesh & crystal sheets (烫钻胶网、水钻网布、满钻布)",
+      "Rhinestone crystal trimming cords & ropes (水钻排钻条、水钻包边绳、烫钻织带)",
+      "Letter & pattern rhinestone appliques (字母水钻烫贴、图案烫钻)",
+      "Glitter crystal mesh for evening dresses, handbags & shoes (礼服、鞋靴及箱包高档闪钻辅料)",
+      "Custom rhinestone design, cutting & OEM manufacturing (专业开版定制、来样加工)"
+    ],
+    "products_services": "Direct factory manufacturing and wholesale of rhinestone mesh, hotfix crystal sheets, diamond cords, and luxury garment/shoe/bag trims at Yiwu Trade City District 3 (义乌荷叶塘工厂直销与商贸城三区实体批发：专业生产烫钻胶网、水钻网布、水晶饰条及服饰鞋包钻饰辅料)",
+    "notes": "Showroom located at Booth 27965, 6th Street, 3rd Floor, Gate 65, District 3, Yiwu International Trade City. Factory located in Heyetang Industrial Zone, Futian Street, Yiwu City. WeChat QR decoded successfully.",
+    "qr_status": "decoded",
+    "qr_payload": "WeChat: https://u.wechat.com/EFrkYYaZr_cAwpz3Ip-QMsc",
+    "verification_status": "Card transcription verified; WeChat active; physical showroom at Yiwu Trade City District 3 Booth 27965",
+    "business_card_front": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0092/front.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T220541Z&X-Amz-Expires=604800&X-Amz-Signature=bcfdfb8ae16a2686bf56dfb503b617f92db39d56c691b8f8df1ea14b260de068&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "business_card_back": "https://china-supplier-directory.1f60a272ef9681feba3ea3196f1f7211.r2.cloudflarestorage.com/supplier-cards/SUP-0092/back.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=8dccae1735148226d523d4b47424c214%2F20261031%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261031T220541Z&X-Amz-Expires=604800&X-Amz-Signature=ddd196bf47d07a12422d1ebabf734d08db0dfdd93e6a9050fb132aded869299a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "is_favorite": false,
+    "is_demo": false,
+    "created_at": "2026-10-31T22:05:41.103Z",
+    "updated_at": "2026-10-31T22:05:41.103Z"
   }
 ];
