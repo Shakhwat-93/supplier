@@ -1,6 +1,6 @@
 import { Supplier } from '../types/supplier';
 
-export const INITIAL_SUPPLIERS: Supplier[] = [
+export const INITIAL_SUPPLIERS: Supplier[] = ([
   {
     "id": "SUP-0001",
     "supplierCode": "SUP-0001",
@@ -240,9 +240,6 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_favorite": false,
     "is_demo": false,
     "created_at": "2026-10-20T13:33:48.131Z"
-  },
-    "createdAt": "2026-10-20T12:00:00Z",
-    "updatedAt": "2026-10-20T12:00:00Z"
   },
   {
     "id": "SUP-0007",
@@ -2544,9 +2541,6 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "is_demo": false,
     "created_at": "2026-10-21T12:49:57.761Z"
   },
-    "createdAt": "2026-10-21T12:49:57.761Z",
-    "updatedAt": "2026-10-21T12:49:57.761Z"
-  },
   {
     "id": "SUP-0064",
     "supplierCode": "SUP-0064",
@@ -3787,4 +3781,4 @@ export const INITIAL_SUPPLIERS: Supplier[] = [
     "created_at": "2026-10-31T22:24:10.533Z",
     "updated_at": "2026-10-31T22:24:10.533Z"
   }
-];
+] as unknown as Supplier[]);
